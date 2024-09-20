@@ -1,0 +1,116 @@
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  width: 100vw;
+  height: 100vh;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.left {
+  background-color: #000051; /* Dark blue tone */
+  color: white;
+  width: 35%; /* 35% width for the left side */
+  text-align: center;
+  position: relative;
+}
+
+.right {
+  background-color: #fbfbfa; /* Light gray tone */
+  color: #000051; /* Dark blue color for text */
+  width: 65%; /* 65% width for the right side */
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+h1 {
+  font-size: 2.5rem; /* Responsive font size */
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem; /* Responsive font size */
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0; /* Increased height for the button */
+  background-color: #ff5000; /* Orange color */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem; /* Responsive font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth color transition and scaling */
+  box-sizing: border-box;
+}
+
+.button:hover {
+  background-color: #e64a19; /* Darker orange on hover */
+}
+
+.button:active {
+  background-color: #d32f2f; /* Reddish tint when clicked */
+  transform: scale(0.98); /* Slightly scale down for a pressing effect */
+}
+
+.right h2 {
+  margin-top: 0;
+  font-size: 2rem; /* Responsive font size */
+}
+
+.right p {
+  font-size: 1.2rem; /* Responsive font size */
+  line-height: 1.5;
+  text-align: center;
+}
+
+.instructions-icon {
+  font-size: 3rem; /* Responsive font size */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .left,
+  .right {
+    width: 100%; /* Stack sections vertically on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .left {
+    position: static; /* Remove absolute positioning on smaller screens */
+    margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .button {
+    position: static; /* Remove absolute positioning */
+    width: auto; /* Allow width to adjust based on content */
+    padding: 15px; /* Adjust padding */
+  }
+}

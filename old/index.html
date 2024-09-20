@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hand Gesture Controlled Image Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Section: Instructions -->
+      <div class="instructions">
+        <h1>Project Name: Hand Gesture Controlled Image Gallery</h1>
+
+        <div class="how-to-play">
+          <h2>How to Play</h2>
+          <ul>
+            <li>Step 1: Train your model using Teachable Machine</li>
+            <li>Step 2: Upload your model using the input below</li>
+            <li>Step 3: Use hand gestures to navigate images</li>
+            <li>Step 4: Ensure good lighting for accurate gesture detection</li>
+            <li>Step 5: Hover over preview images to view and select</li>
+          </ul>
+        </div>
+
+        <div class="model-input">
+          <label for="model-url">Enter Teachable Machine Model URL:</label>
+          <input
+            type="text"
+            id="model-url"
+            placeholder="Paste the model URL here..."
+          />
+          <button id="load-model">Load Model</button>
+        </div>
+      </div>
+
+      <!-- Right Section: Image Gallery -->
+      <div class="gallery-section">
+        <!-- Webcam and gesture detection (top right corner) -->
+        <div class="webcam-container">
+          <div id="gesture-text">
+            Gesture Detected <span id="gesture">Null</span>
+          </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="gallery-container">
+          <img
+            id="displayed-img"
+            src="images/dog-1.jpeg"
+            alt="Displayed Image"
+          />
+          <div id="slider">
+            <img class="preview" src="images/dog-1.jpeg" alt="Image 1" />
+            <img class="preview" src="images/dog-2.jpg" alt="Image 2" />
+            <img class="preview" src="images/dog-3.jpeg" alt="Image 3" />
+            <img class="preview" src="images/dog-4.jpg" alt="Image 4" />
+            <img class="preview" src="images/dog-5.jpg" alt="Image 5" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load libraries first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.js"></script>
+
+    <!-- Then load your script -->
+    <script src="main.js"></script>
+  </body>
+</html>
