@@ -3,126 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel Destinations Slider</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Game Homepage</title>
+    <link rel="stylesheet" href="home.css" />
   </head>
   <body>
     <div class="container">
       <!-- Left Section -->
-      <div class="left-section">
-        <div class="top-div">
-          <h1>Project Name</h1>
-        </div>
-        <div class="center-div">
-          <h2>Instructions</h2>
-          <ul>
-            <li>Step 1: Train your model using Teachable Machine</li>
-            <li>Step 2: Upload your model using the input below</li>
-            <li>Step 3: Use hand gestures to navigate images</li>
-            <li>Step 4: Ensure good lighting for accurate gesture detection</li>
-            <li>Step 5: Hover over preview images to view and select</li>
-          </ul>
-        </div>
-        <div class="bottom-div">
-          <button id="startBtn">Start</button>
-        </div>
+      <div class="left">
+        <h1>AI Automation using</h1>
+        <div class="subtitle">AI Gallery Automation using TEACHABLE</div>
+        <!-- Subtitle below the title -->
+        <a class="button" href="./ai-automation.html">LET's GO</a>
       </div>
 
       <!-- Right Section -->
-      <div class="right-section">
-        <div id="gesture-text">
-          Gesture Detected <span id="gesture">Null</span>
-        </div>
-        <div class="image-gallery">
-          <div class="slide">
-            <div
-              class="item"
-              style="
-                background-image: url('https://i.ibb.co/L53yMQr/germany.jpg');
-              "
-            >
-              <div class="content">
-                <div class="name">Germany</div>
-                <div class="des">
-                  The land where castles meet culture and history meets beauty.
-                </div>
-                <button>See More</button>
-              </div>
-            </div>
-
-            <div
-              class="item"
-              style="
-                background-image: url('https://i.ibb.co/L9CXKs3/paris.jpg');
-              "
-            >
-              <div class="content">
-                <div class="name">Paris</div>
-                <div class="des">The city of lights and love.</div>
-                <button>See More</button>
-              </div>
-            </div>
-
-            <div
-              class="item"
-              style="
-                background-image: url('https://i.ibb.co/6Y0wcZn/ireland.jpg');
-              "
-            >
-              <div class="content">
-                <div class="name">Ireland</div>
-                <div class="des">
-                  "A land of rolling green hills, ancient myths, and warm
-                  welcomes."
-                </div>
-                <button>See More</button>
-              </div>
-            </div>
-
-            <div
-              class="item"
-              style="
-                background-image: url('https://i.ibb.co/f8HBpmg/japan.jpg');
-              "
-            >
-              <div class="content">
-                <div class="name">Japan</div>
-                <div class="des">
-                  Where tradition meets innovation amidst stunning landscapes
-                  and vibrant cities.
-                </div>
-                <button>See More</button>
-              </div>
-            </div>
-
-            <div
-              class="item"
-              style="
-                background-image: url('https://i.ibb.co/smWJ1Yz/switzerland.jpg');
-              "
-            >
-              <div class="content">
-                <div class="name">Switzerland</div>
-                <div class="des">
-                  A paradise of alpine beauty, serene lakes, and timeless charm.
-                </div>
-                <button>See More</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="button">
-            <button class="prev">Prev</button>
-            <button class="next">Next</button>
-          </div>
-        </div>
+      <div class="right">
+        <h2>What's it all about!!!</h2>
+        <div class="instructions-icon">⤷</div>
+        <!-- Optional: Replace with an appropriate arrow image/icon -->
+        <p>
+          Navigate through images using your hands <br />
+          Raise Right hand to go to next image<br />
+          Raise Left Hand to view previous Image <br />
+          Do nothing to read and explore the image slide.
+        </p>
       </div>
     </div>
 
-    <!-- Libraries for AI Automation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-    <script src="https://unpkg.com/ml5@1/dist/ml5.js"></script>
-
-    <script src="script.js"></script>
+    <script></script>
+    <script src="home.js"></script>
   </body>
 </html>
