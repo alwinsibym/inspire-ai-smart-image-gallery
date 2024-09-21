@@ -102,6 +102,7 @@ let canChange = false; // Defines whether image can be changed or not
 let intervalID = setInterval(() => {
   canChange = true;
 }, 1000);
+
 function updateImage(ctx) {
   let controller;
   if (controller != ctx && canChange == true) {
