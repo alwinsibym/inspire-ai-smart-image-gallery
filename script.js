@@ -1,61 +1,10 @@
-let nextBtn = document.querySelector(".next");
-let prevBtn = document.querySelector(".prev");
-let startBtn = document.getElementById("startBtn");
-let webcam = document.getElementById("webcam");
-
-// Image Slider
-nextBtn.addEventListener("click", function () {
-  updateImage("right");
-});
-
-prevBtn.addEventListener("click", function () {
-  updateImage("left");
-});
-
-let canChange = false; // Defines whether image can be changed or not
-let intervalID = setInterval(() => {
-  canChange = true;
-}, 3000);
-
-function updateImage(ctx) {
-  let controller;
-  if (controller != ctx && canChange == true) {
-    console.log("updating image with: ", ctx);
-    switch (ctx) {
-      case "left": {
-        previous();
-        canChange = false;
-        break;
-      }
-      case "right": {
-        next();
-        canChange = false;
-        break;
-      }
-
-      default: {
-        console.log("Nothing to change");
-        canChange = false;
-      }
-    }
-  }
-}
-
-function previous() {
-  let items = document.querySelectorAll(".item");
-  document.querySelector(".slide").prepend(items[items.length - 1]);
-}
-
-function next() {
-  let items = document.querySelectorAll(".item");
-  document.querySelector(".slide").appendChild(items[0]);
-}
-
 // Script for AI automation
-
 console.log("Dom Content loaded");
 // Model URL
 let imageModelURL = "https://teachablemachine.withgoogle.com/models/zhDnwEapI/";
+
+if()
+
 
 let gesture = document.getElementById("gesture");
 
@@ -132,4 +81,58 @@ function gotResult(error, results) {
     gesture.innerHTML = error[0].label.toUpperCase();
     updateImage(error[0].label);
   }
+}
+
+// Gallary controls
+let nextBtn = document.querySelector(".next");
+let prevBtn = document.querySelector(".prev");
+let startBtn = document.getElementById("startBtn");
+let webcam = document.getElementById("webcam");
+
+// Image Slider
+nextBtn.addEventListener("click", function () {
+  updateImage("right");
+});
+
+prevBtn.addEventListener("click", function () {
+  updateImage("left");
+});
+
+let canChange = false; // Defines whether image can be changed or not
+let intervalID = setInterval(() => {
+  canChange = true;
+}, 3000);
+
+function updateImage(ctx) {
+  let controller;
+  if (controller != ctx && canChange == true) {
+    console.log("updating image with: ", ctx);
+    switch (ctx) {
+      case "left": {
+        previous();
+        canChange = false;
+        break;
+      }
+      case "right": {
+        next();
+        canChange = false;
+        break;
+      }
+
+      default: {
+        console.log("Nothing to change");
+        canChange = false;
+      }
+    }
+  }
+}
+
+function previous() {
+  let items = document.querySelectorAll(".item");
+  document.querySelector(".slide").prepend(items[items.length - 1]);
+}
+
+function next() {
+  let items = document.querySelectorAll(".item");
+  document.querySelector(".slide").appendChild(items[0]);
 }
