@@ -3,7 +3,7 @@ console.log("Dom Content loaded");
 // Model URL
 let imageModelURL = "https://teachablemachine.withgoogle.com/models/zhDnwEapI/";
 
-if()
+
 
 
 let gesture = document.getElementById("gesture");
