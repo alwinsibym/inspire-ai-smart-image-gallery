@@ -1,15 +1,15 @@
 console.log("Dom Content loaded");
 // Model URL
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/6PWOyl35P/";
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/zhDnwEapI/";
 
 let gesture = document.getElementById("gesture");
 
 let images = [
-  "images/dog-1.jpeg",
-  "images/dog-2.jpg",
-  "images/dog-3.jpeg",
-  "images/dog-4.jpg",
-  "images/dog-5.jpg",
+  "../images/dog-1.jpeg",
+  "../images/dog-2.jpg",
+  "../images/dog-3.jpeg",
+  "../images/dog-4.jpg",
+  "../images/dog-5.jpg",
 ];
 
 let displayedImg = document.getElementById("displayed-img");
@@ -84,25 +84,44 @@ function gotResult(error, results) {
 
 function next() {
   currentIndex += 1;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
   displayedImg.src = images[currentIndex];
 }
 
 function previous() {
   currentIndex -= 1;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
   displayedImg.src = images[currentIndex];
 }
 
+let canChange = false; // Defines whether image can be changed or not
+let intervalID = setInterval(() => {
+  canChange = true;
+}, 1000);
 function updateImage(ctx) {
-  switch (ctx) {
-    case "left": {
-      previous();
-    }
-    case "right": {
-      next();
-    }
+  let controller;
+  if (controller != ctx && canChange == true) {
+    console.log("updating image with: ", ctx);
+    switch (ctx) {
+      case "left": {
+        previous();
+        canChange = false;
+        break;
+      }
+      case "right": {
+        next();
+        canChange = false;
+        break;
+      }
 
-    default: {
-      console.log("Nothing to do");
+      default: {
+        console.log("Nothing to change");
+        canChange = false;
+      }
     }
   }
 }
