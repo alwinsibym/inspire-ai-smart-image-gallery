@@ -16,6 +16,7 @@ let canChange = false; // Defines whether image can be changed or not
 let intervalID = setInterval(() => {
   canChange = true;
 }, 3000);
+
 function updateImage(ctx) {
   let controller;
   if (controller != ctx && canChange == true) {
@@ -69,17 +70,13 @@ let images = [
 let displayedImg = document.getElementById("displayed-img");
 let gestureText = document.getElementById("gesture-text"); // Element to display the detected gesture
 let currentIndex = 0;
-// displayedImg.src = images[currentIndex];
 
 let video;
 
 // Classifier Variable
 let classifier;
 
-// Video
-let flippedVideo;
-// To store the classification
-let label = "";
+function initializeAutmation() {}
 
 // Load the model first
 function preload() {
@@ -87,6 +84,7 @@ function preload() {
   classifier = ml5.imageClassifier(imageModelURL + "model.json");
 }
 
+// Creates canvas and initializes the application
 function setup() {
   console.log("Setup called");
 
@@ -102,6 +100,9 @@ function setup() {
   classifyVideo();
 }
 
+let label;
+
+// Main draw loop. Draws video captured from the webcam to canvas element and classifies video accoringly. Its an endless loop
 function draw() {
   // console.log("Draw called");
 
@@ -131,6 +132,4 @@ function gotResult(error, results) {
     gesture.innerHTML = error[0].label.toUpperCase();
     updateImage(error[0].label);
   }
-  // The results are in an array ordered by confidence.
-  // Classify again with a small delay
 }
