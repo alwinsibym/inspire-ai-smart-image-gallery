@@ -1,7 +1,7 @@
 // Script for AI automation
 console.log("Dom Content loaded");
 // Model URL
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/zhDnwEapI/";
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/2FXUaQcaf/";
 
 
 
